@@ -1,0 +1,25 @@
+{
+  "name": "namaste-react-satish",
+  "version": "1.0.0",
+  "description": "This is namaste react learning from Satish",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/satishadh-10/Namaste-React-Satish.git)"
+  },
+  "keywords": [],
+  "author": "Satish",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
