@@ -7,7 +7,6 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
-
 const Body = () => {
   const [listOfResturants, setlistOfResturant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -38,14 +37,14 @@ const Body = () => {
       
 
     return (
-       <div className="body">
-          <div className="filter">
-            <div className="search">
-               <input type="text" className="search-box" value={searchText} 
+       <div className="body bg-blue-300">
+          <div className="filter flex">
+            <div className="search m-4 p-4 ">
+               <input type="text" className="border border-solid border-black rounded-2xl" value={searchText} 
                onChange={(e) => {
                   setSearchText(e.target.value)
                }} />
-                  <button className="search-btn" onClick={() => {
+                  <button className="px-4 py-1 m-4 bg-green-100 rounded-2xl" onClick={() => {
                      const filteredRestaurant = listOfResturants.filter((res) => 
                      res.info.name.toLowerCase().includes(searchText.toLowerCase())
                      )
@@ -54,7 +53,8 @@ const Body = () => {
                      search
                   </button>
             </div>
-            <button className="filter-btn" onClick={() => {
+            <div className="search m-4 p-4 flex items-center" >
+            <button className="filter px-4 py-1 bg-gray-100 rounded-2xl" onClick={() => {
                const filteredList = listOfResturants.filter(
                   (res) => res.info.avgRating > 4
                );
@@ -63,9 +63,11 @@ const Body = () => {
             }}>
                Top Rated Resturants
                </button>
+            </div>
+            
              
           </div>
-          <div className="restro-container">
+          <div className="flex flex-wrap px-4">
             {filteredRestaurant.map((resturant) => (
            <Link 
            key={resturant.info.id} 
