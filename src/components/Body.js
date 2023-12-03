@@ -12,6 +12,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const[searchText, setSearchText] = useState("");
 
+  //console.log(listOfResturants);
+
       useEffect(() => {
          fetchData();
       }, []);
@@ -22,7 +24,7 @@ const Body = () => {
              );
 
          const json = await data.json();
-           console.log(json);
+           //console.log(json);
          setlistOfResturant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
          setFilteredRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       }; 
@@ -37,20 +39,20 @@ const Body = () => {
       
 
     return (
-       <div className="body bg-blue-300">
+       <div className="body px-[120px] bg-blue-300 flex flex-wrap">
           <div className="filter flex">
             <div className="search m-4 p-4 ">
                <input type="text" className="border border-solid border-black rounded-2xl" value={searchText} 
                onChange={(e) => {
                   setSearchText(e.target.value)
                }} />
-                  <button className="px-4 py-1 m-4 bg-green-100 rounded-2xl" onClick={() => {
+                  <button className="px-4 py-1 m-4 bg-green-300 rounded-2xl font-semibold hover:text-red-900" onClick={() => {
                      const filteredRestaurant = listOfResturants.filter((res) => 
                      res.info.name.toLowerCase().includes(searchText.toLowerCase())
                      )
                      setFilteredRestaurant(filteredRestaurant)
                   }}>
-                     search
+                     Search
                   </button>
             </div>
             <div className="search m-4 p-4 flex items-center" >

@@ -18,31 +18,31 @@ const Header = () => {
       
     <div className="flex items-center">
        <ul className="flex p-4 m-4">
-         <li className=" px-4 font-bold">
+         <li className=" px-4 font-bold  hover:text-blue-800">
              Online Status: {onlineStatus ? "🟢" : "🔴"}
          </li>
-          <li className=" px-4 font-bold hover:font-extrabold">
+          <li className=" px-4 font-bold hover:font-extrabold  hover:text-blue-800">
             <Link to="/">
             Home
             </Link>
          </li>
-          <li className=" px-4 font-bold hover:font-extrabold">
+          <li className=" px-4 font-bold hover:font-extrabold hover:text-blue-800">
             <Link to= "/about">
             About Us
             </Link>
          </li>
-          <li className=" px-4 font-bold hover:font-extrabold">
+          <li className=" px-4 font-bold hover:font-extrabold  hover:text-blue-800">
             <Link to= "/contact">
             Contact Us
             </Link>
          </li>
-          <li className=" px-4 font-bold hover:font-extrabold">
+          <li className=" px-4 font-bold hover:font-extrabold  hover:text-blue-800">
             <Link to= "/grocery">
             Grocery
             </Link>
          </li>
-          <li className=" px-4 font-bold hover:font-extrabold">Cart</li>
-          <button className="log-btn font-bold hover:font-extrabold px-4" onClick={() => {
+          <li className=" px-4 font-bold hover:font-extrabold  hover:text-blue-800">Cart</li>
+          <button className="log-btn font-bold hover:font-extrabold px-4  hover:text-blue-800" onClick={() => {
             btnNameReact === "Login" 
             ? setBtnNameReact("Logout") 
             : setBtnNameReact("Login")
