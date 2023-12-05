@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { CDM_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
+import User from "./User";
 
 const ResturantCard = (props) => {
     const {resData} = props;
+    const {loggedInUser} = useContext(UserContext);
  
     const {
        cloudinaryImageId,
@@ -26,6 +30,8 @@ const ResturantCard = (props) => {
           <h4 className="mx-3">{costForTwo}</h4>
           </div>
           <h4 className="my-4 py-2">{resData.info.sla.deliveryTime}minute</h4>
+          <h3>{loggedInUser}</h3>
+
        </div>
     )
  };
