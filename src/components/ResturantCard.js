@@ -5,6 +5,7 @@ import User from "./User";
 
 const ResturantCard = (props) => {
     const {resData} = props;
+    //console.log(resData);
     const {loggedInUser} = useContext(UserContext);
  
     const {
@@ -15,7 +16,7 @@ const ResturantCard = (props) => {
        costForTwo,
     } = resData?.info;
     return(
-       <div className="mx-6 my-4 p-2 w-[220px] rounded-xl bg-gray-200 hover:bg-gray-400" >
+       <div data-testid="resCards" className="mx-6 my-4 p-2 w-[220px] rounded-xl bg-gray-200 hover:bg-gray-400" >
          <div>
           <img className="res-logo h-32 w-[240px] object-cover rounded-md" alt="res-logo" src={CDM_URL
           +cloudinaryImageId}>   
